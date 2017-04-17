@@ -1,7 +1,7 @@
 const graphql = require('graphql');
 const {
   GraphQLObjectType,
-  GrapQLString
+  GraphQLString
 } = graphql;
 
 const UserType = require('./types/user_type');
@@ -13,7 +13,7 @@ const mutation = new GraphQLObjectType({
     signup: {
       type: UserType,
       args: {
-        email: { type: GrapQLString },
+        email: { type: GraphQLString },
         password: { type: GraphQLString }
       },
       resolve(parentValue, { email, password }, req) {
