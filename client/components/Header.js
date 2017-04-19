@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
+import { Link } from 'react-router';
 import query from '../queries/CurrentUser';
 
 class Header extends Component {
@@ -21,7 +22,10 @@ class Header extends Component {
 		return (
 			<nav>
 				<div className="nav-wrapper"> 
-					{this.renderButtons()}
+					<Link to="/" className="brand-logo"> Home </Link>
+					<ul className="right">
+						{this.renderButtons()}
+					</ul>
 				</div>
 			</nav>
 		);
