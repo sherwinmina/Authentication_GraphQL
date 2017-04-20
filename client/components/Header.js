@@ -4,13 +4,19 @@ import { Link } from 'react-router';
 import query from '../queries/CurrentUser';
 
 class Header extends Component {
+	onLogoutClick() {
+		
+	}
+
 	renderButtons() {
 		const { loading, user } = this.props.data;
 
 		if (this.props.data.loading) { return <div />; }
 		
 		if (user) {
-			return	<div>Logout</div>;
+			return	(
+			<li><a onClick={this.onLogoutClick.bind(this)}>Logout</a></li>
+			);
 		} else {
 			return (
 				<div>
@@ -18,7 +24,7 @@ class Header extends Component {
 						<Link to="/signup">Signup</Link>
 					</li>
 					<li>
-						<Link to="/login">Login</Link>
+						<Link to="/login">Signup</Link>
 					</li>
 				</div>
 			);
